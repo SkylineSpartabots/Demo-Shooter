@@ -24,3 +24,4 @@ public class Shooter extends SubsystemBase {
     public void stopShoot(){
         shooterMotor.set(ControlMode.PercentOutput, 0);
     }
+}
