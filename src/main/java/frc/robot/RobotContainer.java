@@ -14,12 +14,6 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 import frc.robot.subsystems.Shooter;
 
-/**
- * This class is where the bulk of the robot should be declared. Since Command-based is a
- * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
- * periodic methods (other than the scheduler calls). Instead, the structure of the robot (including
- * subsystems, commands, and trigger mappings) should be declared here.
- */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   
@@ -27,15 +21,17 @@ public class RobotContainer {
   private final XboxController driver = new XboxController(0);
 
   /* Driver Buttons */
+  // Initializing Driver Buttons
   private final JoystickButton driverA = new JoystickButton(driver, XboxController.Button.kA.value);
   private final JoystickButton driverB = new JoystickButton(driver, XboxController.Button.kB.value);
-  private final JoystickButton driverLeftBumper = new JoystickButton(driver, XboxController.Button.kLeftBumper.value);
-  private final JoystickButton driverRightBumper = new JoystickButton(driver, XboxController.Button.kRightBumper.value);
-  // Replace with CommandPS4Controller or CommandJoystick if needed
-  private final CommandXboxController m_driverController =
-      new CommandXboxController(OperatorConstants.kDriverControllerPort);
+  // Based on the examples above, can you create a new driverY button?
 
-  /** The container for the robot. Contains subsystems, OI devices, and commands. */
+
+  // Initializing Driver Bumpers
+  private final JoystickButton driverLeftBumper = new JoystickButton(driver, XboxController.Button.kLeftBumper.value);
+  // Can you create a new driverRightBumper button?
+  
+  
   Shooter s_Shooter;
   public RobotContainer() {
     // Configure the trigger bindings
@@ -53,13 +49,15 @@ public class RobotContainer {
    * joysticks}.
    */
   private void configureBindings() {
-    // Schedule `ExampleCommand` when `exampleCondition` changes to `true`
+
+    // Exmaples for how to bind keys to motor actions
     driverA.onTrue(new InstantCommand(() -> s_Shooter.shoot()));
     driverB.onTrue(new InstantCommand(() -> s_Shooter.stopShoot()));
+    // Try to bind the driverY button to the rev() shooter function
+
     driverLeftBumper.onTrue(new InstantCommand(() -> s_Shooter.decSpeed()));
-    driverRightBumper.onTrue(new InstantCommand(() -> s_Shooter.incSpeed()));
-    // Schedule `exampleMethodCommand` when the Xbox controller's B button is pressed,
-    // cancelling on release.
+    //Try to bind the driverRightBumpter to the incSpeed() shooter function
+
   }
 
   /**
