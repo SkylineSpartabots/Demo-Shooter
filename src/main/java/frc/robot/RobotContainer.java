@@ -53,9 +53,11 @@ public class RobotContainer {
     // Exmaples for how to bind keys to motor actions
     driverA.onTrue(new InstantCommand(() -> s_Shooter.shoot()));
     driverB.onTrue(new InstantCommand(() -> s_Shooter.stopShoot()));
+
     // Try to bind the driverY button to the rev() shooter function
 
     driverLeftBumper.onTrue(new InstantCommand(() -> s_Shooter.decSpeed()));
+
     //Try to bind the driverRightBumpter to the incSpeed() shooter function
 
   }

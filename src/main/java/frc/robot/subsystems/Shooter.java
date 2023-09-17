@@ -30,6 +30,7 @@ public class Shooter extends SubsystemBase {
 
         // How fast do you want the shooter to go? How do you think you can write this in the code?
         
+        
     }
 
     // Change the direction of the motor
@@ -73,6 +74,7 @@ public class Shooter extends SubsystemBase {
     // Stop the motor
     public void stopShoot() {
         // How can you stop the motor?
+
         shooting = false;
     }
 }
